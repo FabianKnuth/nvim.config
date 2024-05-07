@@ -11,7 +11,9 @@ return {
       require('mason-lspconfig').setup({
         ensure_installed = {
           "lua_ls",
-          "tsserver"
+          "tsserver",
+          "dockerls",
+          "docker_compose_language_service",
         }
       })
     end
@@ -22,6 +24,8 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
       lspconfig.tsserver.setup({})
+      lspconfig.dockerls.setup({})
+      lspconfig.docker_compose_language_service.setup({})
 
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
