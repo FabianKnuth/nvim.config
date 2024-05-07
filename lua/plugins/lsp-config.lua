@@ -16,6 +16,7 @@ return {
           "tsserver",
           "dockerls",
           "docker_compose_language_service",
+          "marksman",
         }
       })
     end
@@ -28,6 +29,8 @@ return {
       lspconfig.tsserver.setup({})
       lspconfig.dockerls.setup({})
       lspconfig.docker_compose_language_service.setup({})
+      lspconfig.marksman.setup({})
+
 
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
