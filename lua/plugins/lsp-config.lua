@@ -2,24 +2,24 @@ return {
   {
     "williamboman/mason.nvim",
     lazy = false,
-  config = function()
-    require('mason').setup()
-  end
+    config = function()
+      require("mason").setup()
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     config = function()
-      require('mason-lspconfig').setup({
+      require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
           "tsserver",
           "dockerls",
           "docker_compose_language_service",
           "marksman",
-        }
+        },
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -31,11 +31,9 @@ return {
       lspconfig.docker_compose_language_service.setup({})
       lspconfig.marksman.setup({})
 
-
-
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  }
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }
